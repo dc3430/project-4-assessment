@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <header className='App-header'>Unit 4 Final Assessment</header>
+        <header className='App-header'>UNIT 4 FINAL ASSESSMENT</header>
         <main>
           <CirclesSelector
             selectedCircle={this.state.selectedCircle}
