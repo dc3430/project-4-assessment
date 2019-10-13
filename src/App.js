@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-
 import './App.css';
+import Circles from './components/Circles/Circles';
+import CirclesSelector from './components/CircleSelector/CircleSelector';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedCircle: 1
+    };
+  }
+
+  handleChangeCircle = (CircleNumber) => {
+    this.setState({selectedCircle: CircleNumber});
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <header className='App-header'>Unit 4 Final Assessment</header>
+        <main>
+          <CirclesSelector
+            selectedCircle={this.state.selectedCircle}
+            handleChangeCircle={this.handleChangeCircle}
+          />
+          <Circles selectedCircle={this.state.selectedCircle} />        
+          </main>
+      </div>
+    );
+  }
+
+
 }
 
 export default App;
